@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="StatsController">
+    <children>
+        <Button layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#toManaging" text="Back to Managing"/>
+        <VBox layoutX="192.0" layoutY="73.0" prefHeight="720.0" prefWidth="1080.0" AnchorPane.bottomAnchor="20.0"
+              AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0">
+            <children>
+                <GridPane alignment="CENTER" prefHeight="74.0" prefWidth="1040.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0"
+                                           prefWidth="279.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="561.0" minWidth="10.0"
+                                           prefWidth="290.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1005.0" minWidth="10.0"
+                                           prefWidth="366.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1005.0" minWidth="10.0"
+                                           prefWidth="231.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Button layoutX="14.0" layoutY="3.0" mnemonicParsing="false" text="Button"/>
+                        <DatePicker fx:id="timePicker1" prefHeight="23.0" prefWidth="232.0" promptText="Begin Date"/>
+                        <DatePicker fx:id="timePicker2" prefHeight="23.0" prefWidth="234.0" promptText="After Date"
+                                    GridPane.columnIndex="1"/>
+                        <Button mnemonicParsing="false" onAction="#search" prefHeight="29.0" prefWidth="85.0"
+                                text="Get Stats" GridPane.columnIndex="2"/>
+                        <Label fx:id="errorInfo" textFill="RED" GridPane.columnIndex="3"/>
+                    </children>
+                </GridPane>
+                <HBox>
+                    <children>
+                        <LineChart fx:id="moneyC" animated="false" createSymbols="false"
+                                   horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="129.0"
+                                   layoutY="-13.0" prefHeight="331.0" prefWidth="819.0" title="Income"
+                                   verticalGridLinesVisible="false" AnchorPane.bottomAnchor="0.0"
+                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="221.0"
+                                   AnchorPane.topAnchor="0.0">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT"/>
+                            </yAxis>
+                        </LineChart>
+                        <GridPane prefHeight="310.0" prefWidth="226.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Label text="Income">
+                                    <font>
+                                        <Font name="System Bold" size="14.0"/>
+                                    </font>
+                                </Label>
+                                <Label text="Expenses" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="14.0"/>
+                                    </font>
+                                </Label>
+                                <Label text="Earning" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font name="System Bold" size="14.0"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="incomeT" textFill="GREEN" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="expenseT" textFill="RED" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="earningT" textFill="GREEN" GridPane.rowIndex="5">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </GridPane>
+                    </children>
+                </HBox>
+                <AnchorPane prefHeight="313.0" prefWidth="1040.0">
+                    <children>
+                        <GridPane hgap="20.0" layoutX="146.0" prefHeight="282.0" prefWidth="1040.0"
+                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                  AnchorPane.topAnchor="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="585.0" minWidth="10.0"
+                                                   prefWidth="542.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="539.0" minWidth="10.0"
+                                                   prefWidth="538.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="254.0"
+                                                vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dish Stats">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients Stats"
+                                      GridPane.columnIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Text>
+                                <ListView fx:id="dishLV" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1"/>
+                                <ListView fx:id="ingredientLV" prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

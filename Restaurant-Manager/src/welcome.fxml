@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="WelcomeController">
+    <children>
+        <VBox layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0"
+              AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+            <children>
+                <AnchorPane prefHeight="373.0" prefWidth="980.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="23.0" layoutY="10.0" prefHeight="241.0" prefWidth="980.0"
+                               text="WELCOME TO 0428 CAFE &amp; SWEETS" textAlignment="CENTER" textFill="#ff7575"
+                               wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="56.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <GridPane hgap="50.0" prefHeight="218.0" prefWidth="980.0" vgap="20.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#toTable" prefHeight="100.0" prefWidth="300.0"
+                                text="Table &amp; Bill">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#toInventory" prefHeight="100.0" prefWidth="300.0"
+                                text="Inventory" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#toCook" prefHeight="100.0" prefWidth="300.0"
+                                text="Cook" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#toManaging" prefHeight="100.0" prefWidth="300.0"
+                                text="Managing" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                </GridPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

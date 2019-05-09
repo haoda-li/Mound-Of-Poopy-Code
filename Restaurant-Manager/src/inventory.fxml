@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<SplitPane dividerPositions="0.6472602739726028" orientation="VERTICAL" prefHeight="720.0" prefWidth="1080.0"
+           xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <children>
+                <Button layoutX="912.0" layoutY="18.0" mnemonicParsing="false" onAction="#search" text="Search"
+                        AnchorPane.leftAnchor="912.0" AnchorPane.topAnchor="18.0"/>
+                <TextField fx:id="searchValue" layoutX="745.0" layoutY="18.0" AnchorPane.leftAnchor="745.0"
+                           AnchorPane.topAnchor="18.0"/>
+                <TableView fx:id="ingredientTableView" layoutX="39.0" layoutY="52.0" prefHeight="372.0"
+                           prefWidth="778.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                    <columns>
+                        <TableColumn fx:id="refID" prefWidth="169.0" text="ReferenceID"/>
+                        <TableColumn fx:id="name" prefWidth="289.0" text="Name"/>
+                        <TableColumn fx:id="number" prefWidth="126.0" text="Number Left"/>
+                        <TableColumn fx:id="email" prefWidth="493.0" text="Provider's Email"/>
+                    </columns>
+                </TableView>
+                <Button layoutX="15.0" layoutY="5.0" mnemonicParsing="false" onAction="#toMain" text="Back to Welcome">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <children>
+                <AnchorPane prefHeight="299.0" prefWidth="281.0"/>
+                <HBox prefHeight="250.0" prefWidth="1078.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <AnchorPane prefHeight="210.0" prefWidth="461.0">
+                            <children>
+                                <GridPane hgap="10.0" prefHeight="250.0" prefWidth="376.0" vgap="5.0"
+                                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label text="Number">
+                                            <font>
+                                                <Font name="System Bold" size="18.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label prefHeight="44.0" prefWidth="87.0" text="Reference ID" wrapText="true"
+                                               GridPane.rowIndex="1">
+                                            <font>
+                                                <Font size="15.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="numberValue" GridPane.columnIndex="1">
+                                            <font>
+                                                <Font name="System Bold Italic" size="18.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="nameValue" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font size="15.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="refIDValue" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font size="15.0"/>
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="numberAddValue" prefHeight="33.0" prefWidth="47.0"
+                                                   GridPane.columnIndex="2"/>
+                                        <Button mnemonicParsing="false" onAction="#addStock" prefHeight="35.0"
+                                                prefWidth="92.0" text="Add" GridPane.columnIndex="3"
+                                                GridPane.halignment="LEFT">
+                                            <font>
+                                                <Font name="System Bold" size="18.0"/>
+                                            </font>
+                                        </Button>
+                                        <Label text="Name" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font size="15.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="errorInfo" textFill="RED" GridPane.columnIndex="3"
+                                               GridPane.rowIndex="2"/>
+                                    </children>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0"
+                                                           prefWidth="122.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0"
+                                                           prefWidth="114.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0"
+                                                           prefWidth="82.0"/>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="240.0"
+                                                           minWidth="10.0" prefWidth="103.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="82.0"
+                                                        vgrow="SOMETIMES"/>
+                                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="25.0"
+                                                        vgrow="SOMETIMES"/>
+                                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="30.0"
+                                                        vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                    <HBox.margin>
+                                        <Insets left="20.0" right="20.0"/>
+                                    </HBox.margin>
+                                </GridPane>
+                            </children>
+                            <HBox.margin>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                            </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="603.0">
+                            <children>
+                                <Label layoutX="281.0" layoutY="5.0" text="Shortage Messages">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <ListView fx:id="needListView" layoutX="281.0" layoutY="30.0" prefHeight="219.0"
+                                          prefWidth="309.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="281.0"
+                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                    </padding>
+                                </ListView>
+                                <Button layoutY="213.0" mnemonicParsing="false" onAction="#addStockByString"
+                                        prefHeight="23.0" prefWidth="153.0" text="Add By String Code"/>
+                                <TextArea fx:id="stringValue" layoutY="28.0" prefHeight="177.0" prefWidth="254.0"
+                                          promptText="RefID,number; RefID,number; "/>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>

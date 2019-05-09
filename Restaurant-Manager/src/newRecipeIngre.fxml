@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="NewRecipeIngreController">
+    <children>
+        <Button layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#toModify" text="Back to Modify"/>
+        <HBox layoutX="270.0" layoutY="211.0" prefHeight="720.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+            <children>
+                <GridPane hgap="30.0" prefHeight="645.0" prefWidth="506.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0"
+                                           prefWidth="147.0"/>
+                        <ColumnConstraints halignment="LEFT" maxWidth="188.0" minWidth="10.0" prefWidth="188.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="87.0" minHeight="71.0" prefHeight="83.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="67.0" minHeight="46.0" prefHeight="55.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="63.0" minHeight="44.0" prefHeight="63.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="68.0" minHeight="40.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="403.0" minHeight="10.0" prefHeight="188.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="403.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label prefHeight="57.0" prefWidth="89.0" text="Add New Recipe" textAlignment="RIGHT"
+                               wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Name" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label text="RefID" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Price" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Type" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <GridPane GridPane.rowIndex="5">
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5"
+                                  GridPane.valignment="CENTER">
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                        </GridPane>
+                        <TextField fx:id="recipeNameTF" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <TextField fx:id="recipeRefIDTF" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <TextField fx:id="recipePriceTF" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        <Label fx:id="recipeSuccessfulInfo" textFill="GREEN" GridPane.columnIndex="1"
+                               GridPane.rowIndex="5"/>
+                        <Button mnemonicParsing="false" onAction="#addNewRecipe" prefHeight="47.0" prefWidth="142.0"
+                                text="Add Recipe" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                        </Button>
+                        <Label fx:id="recipeErrorInfo" textFill="RED" GridPane.columnIndex="2"/>
+                        <GridPane GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <RadioButton fx:id="topping" mnemonicParsing="false" text="Topping"
+                                             GridPane.rowIndex="1"/>
+                                <RadioButton fx:id="hot" mnemonicParsing="false" text="Hot Drink"/>
+                            </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <RadioButton fx:id="cold" mnemonicParsing="false" text="Cold Drink"/>
+                                <RadioButton fx:id="sides" layoutX="10.0" layoutY="20.0" mnemonicParsing="false"
+                                             text="Sides" GridPane.rowIndex="1"/>
+                            </children>
+                        </GridPane>
+                        <Label text="Ingredients" GridPane.rowIndex="4"/>
+                        <TextArea fx:id="recipeIngreTF" prefHeight="200.0" prefWidth="200.0"
+                                  promptText="Name,number; Name,Number; No space after comma" GridPane.columnIndex="1"
+                                  GridPane.rowIndex="4">
+                            <GridPane.margin>
+                                <Insets/>
+                            </GridPane.margin>
+                        </TextArea>
+                        <Label fx:id="recipeIngreErrorInfo" prefHeight="170.0" prefWidth="136.0" textFill="RED"
+                               wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                    </children>
+                    <HBox.margin>
+                        <Insets bottom="30.0" left="10.0" right="50.0"/>
+                    </HBox.margin>
+                </GridPane>
+                <GridPane hgap="40.0" prefHeight="675.0" prefWidth="440.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="56.0" valignment="TOP"
+                                        vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label prefHeight="48.0" prefWidth="99.0" text="Add new Ingredient" textAlignment="RIGHT"
+                               wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="RefID" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Name" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="215.0" prefHeight="59.0" prefWidth="129.0"
+                               text="Shortage Threshold" textAlignment="RIGHT" wrapText="true" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="45.0" text="Add each time" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="45.0" text="Price" GridPane.rowIndex="5">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="ingreNameTF" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <TextField fx:id="ingreRefIDTF" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <TextField fx:id="shortTF" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        <TextField fx:id="addTF" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                        <TextField fx:id="ingrePriceTF" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                        <TextField fx:id="emailTF" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                        <Label text="Provider's Email" GridPane.rowIndex="6">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#addNewIngre" prefHeight="54.0" prefWidth="99.0"
+                                text="Add Ingredient" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1"
+                                GridPane.rowIndex="7"/>
+                        <Label fx:id="ingreErrorInfo" textFill="RED" GridPane.columnIndex="1"/>
+                        <Label fx:id="ingreSuccessInfo" textFill="GREEN" GridPane.rowIndex="7"/>
+                    </children>
+                    <HBox.margin>
+                        <Insets bottom="30.0" left="15.0" right="45.0"/>
+                    </HBox.margin>
+                </GridPane>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
