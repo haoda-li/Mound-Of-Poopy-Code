@@ -1,3 +1,3 @@
 # RestaurantManagerBeta
-JavaFX destop application for simple restaurant management (Course Project)
+JavaFX destop application for simple restaurant management (CSC207 Course Project)
 Teammate Helen Liu, Haoda Li，Zewen Shen
