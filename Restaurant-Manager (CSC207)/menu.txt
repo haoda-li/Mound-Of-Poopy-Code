@@ -1,0 +1,26 @@
+Recipes
+cold; 101; Apple Juice; 4.5; apple,1
+cold; 102; Banana Milk; 5.2; banana,1; milk,1
+cold; 103; Orange Juice; 5; orange,1
+cold; 104; Strawberry Orange Juice; 6; orange,0.5; strawberry,4
+cold; 105; Watermelon Juice; 5; watermelon,0.5
+cold; 106; Origin Bubble Tea; 6; milk,0.1; tea,0.1; bubble,10
+cold; 107; Strawberry Bubble Tea; 6; milk,0.1; tea,0.1; strawberry,1; bubble,10
+cold; 108; Banana Milk Shake; 6; milk,0.1; banana,1
+cold; 109; Strawberry Milk Shake; 6; milk,0.1; strawberry,1
+cold; 111; Ice Tea; 7; lemon,1; tea,0.1
+hot; 202; Hot Chocolate; 8; chocolate,2
+cold; 112; Spicy Milk Shake; 10; milk,0.1; pepper,1
+cold; 113; Orange Carrot Kiwi Apple Juice; 8.8; orange,1; carrot,1; kiwi,1; apple,1
+sides; 301; Chocolate chips; 2.5; chocolate,0.5; potato,1
+topping; 901; Cream Top; 1; cream,1
+topping; 902; Extra Sugar; 0.5; sugar,1
+topping; 903; Bubble; 1.5; bubble,10
+topping; 904; Jelly; 1.5; jelly,5
+topping; 905; Extra Spicy; 1; pepper,0.5
+topping; 906; No sugar; 0; sugar,0
+topping; 907; No ice; 0
+sides; 302; French Fries; 3; potato,1.5
+Topping Configure
+cold; 902; 903; 904; 906; 907
+hot; 901; 902; 903; 906

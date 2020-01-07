@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="CookController">
+    <children>
+        <Text layoutX="20.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cook Queue">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Text>
+        <Text layoutX="540.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deliver Queue">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Text>
+        <Button layoutX="15.0" layoutY="5.0" mnemonicParsing="false" onAction="#toMain" text="Back to Welcome">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Button>
+        <HBox prefHeight="720.0" prefWidth="1080.0" spacing="20.0" AnchorPane.bottomAnchor="20.0"
+              AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+            <children>
+                <VBox>
+                    <children>
+                        <TableView fx:id="cookQueueTableView" prefHeight="199.0" prefWidth="467.0">
+                            <columns>
+                                <TableColumn fx:id="cTime" prefWidth="218.0" text="Times"/>
+                                <TableColumn fx:id="cStatus" prefWidth="248.0" text="Status"/>
+                            </columns>
+                        </TableView>
+                        <AnchorPane prefHeight="386.0" prefWidth="467.0">
+                            <children>
+                                <ScrollPane layoutX="125.0" layoutY="39.0" prefHeight="337.0" prefWidth="467.0"
+                                            AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0"
+                                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
+                                    <content>
+                                        <Text fx:id="cookOrderDetail"/>
+                                    </content>
+                                </ScrollPane>
+                                <Label layoutX="7.0" layoutY="14.0" text="Order Detail">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <GridPane alignment="CENTER" vgap="20.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Button layoutX="340.0" layoutY="82.0" mnemonicParsing="false" onAction="#setComplete"
+                                        prefHeight="50.0" prefWidth="100.0" text="Complete" GridPane.columnIndex="1"/>
+                                <Button layoutX="79.0" layoutY="82.0" mnemonicParsing="false" onAction="#setAcknowledge"
+                                        prefHeight="50.0" prefWidth="100.0" text="Acknowledge"/>
+                                <Text fx:id="errorInfo" fill="RED" fontSmoothingType="LCD" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" GridPane.columnIndex="2"/>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <TableView fx:id="deliverQueueTableView" prefHeight="201.0" prefWidth="554.0">
+                            <columns>
+                                <TableColumn fx:id="dTime" prefWidth="290.0" text="Times"/>
+                                <TableColumn fx:id="dTable" prefWidth="263.0" text="Table"/>
+                            </columns>
+                        </TableView>
+                        <AnchorPane prefHeight="377.0" prefWidth="554.0">
+                            <children>
+                                <ScrollPane layoutX="107.0" layoutY="42.0" prefHeight="331.0" prefWidth="554.0"
+                                            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0">
+                                    <content>
+                                        <Text fx:id="deliverOrderDetail" wrappingWidth="415.0"/>
+                                    </content>
+                                </ScrollPane>
+                                <Label layoutX="14.0" layoutY="14.0" text="Order Detail">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <GridPane prefHeight="73.0" prefWidth="554.0" vgap="20.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#setDeliver" prefHeight="50.0"
+                                        prefWidth="100.0" text="Deliver"/>
+                                <Button mnemonicParsing="false" onAction="#setCancel" prefHeight="55.0" prefWidth="94.0"
+                                        text="Cancel" GridPane.columnIndex="1"/>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

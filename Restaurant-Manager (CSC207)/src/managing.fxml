@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ManagingController">
+    <children>
+        <Button layoutX="15.0" layoutY="5.0" mnemonicParsing="false" onAction="#toMain" text="Back to Welcome">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Button>
+        <GridPane hgap="20.0" layoutY="41.0" prefHeight="659.0" prefWidth="1040.0" AnchorPane.bottomAnchor="20.0"
+                  AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="41.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="435.0" minWidth="10.0" prefWidth="361.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="375.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="501.0" minWidth="10.0" prefWidth="258.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <TableView fx:id="ingredientLogTV" prefHeight="640.0" prefWidth="434.0">
+                    <columns>
+                        <TableColumn fx:id="ingreTimeTC" maxWidth="150.0" minWidth="121.0" prefWidth="121.0"
+                                     text="Time"/>
+                        <TableColumn fx:id="ingreNameTC" maxWidth="137.0" minWidth="108.0" prefWidth="137.0"
+                                     text="Name"/>
+                        <TableColumn fx:id="ingreNumberTC" maxWidth="111.0" minWidth="81.0" prefWidth="104.0"
+                                     text="Number"/>
+                    </columns>
+                </TableView>
+                <AnchorPane prefHeight="675.0" prefWidth="351.0" GridPane.columnIndex="2">
+                    <children>
+                        <GridPane layoutX="78.0" layoutY="202.0" prefHeight="675.0" prefWidth="235.0"
+                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0"
+                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="50.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="490.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="32.0"
+                                                valignment="BOTTOM"/>
+                                <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="345.0" valignment="TOP"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="294.0" minHeight="0.0" prefHeight="89.0" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="97.0" minHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Button layoutX="133.0" layoutY="10.0" mnemonicParsing="false" onAction="#search"
+                                        prefHeight="31.0" prefWidth="204.0" text="Seach Date Interval"
+                                        textAlignment="CENTER" wrapText="true" GridPane.valignment="TOP"/>
+                                <Button mnemonicParsing="false" onAction="#toStats" prefHeight="50.0" prefWidth="150.0"
+                                        text="View Stats" GridPane.rowIndex="5">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#toModify" prefHeight="50.0" prefWidth="150.0"
+                                        text="Modify Recipe / Ingredients" textAlignment="CENTER" wrapText="true"
+                                        GridPane.rowIndex="6">
+                                    <font>
+                                        <Font size="15.0"/>
+                                    </font>
+                                </Button>
+                                <DatePicker fx:id="timePicker1" minHeight="30.0" minWidth="75.0" prefHeight="30.0"
+                                            prefWidth="240.0" promptText="Date After this" GridPane.rowIndex="1"
+                                            GridPane.valignment="TOP">
+                                    <GridPane.margin>
+                                        <Insets bottom="5.0" top="5.0"/>
+                                    </GridPane.margin>
+                                </DatePicker>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Log Detail" wrappingWidth="100.0"
+                                      GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Text>
+                                <Group/>
+                                <DatePicker fx:id="timePicker2" layoutX="10.0" layoutY="51.0" prefHeight="30.0"
+                                            prefWidth="240.0" promptText="Date Before this" GridPane.rowIndex="2">
+                                    <GridPane.margin>
+                                        <Insets bottom="5.0" top="5.0"/>
+                                    </GridPane.margin>
+                                </DatePicker>
+                                <ScrollPane prefHeight="333.0" prefWidth="240.0" GridPane.rowIndex="4">
+                                    <content>
+                                        <Text fx:id="orderDetail" strokeType="OUTSIDE" strokeWidth="0.0"/>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+                <TableView fx:id="orderLogTV" prefHeight="600.0" prefWidth="437.0" GridPane.columnIndex="1">
+                    <columns>
+                        <TableColumn fx:id="orderTimeTC" prefWidth="133.0" text="Time"/>
+                        <TableColumn fx:id="orderIDTC" prefWidth="131.0" text="OrderID"/>
+                        <TableColumn fx:id="tableIDTC" prefWidth="113.0" text="TableID"/>
+                    </columns>
+                    <padding>
+                        <Insets bottom="10.0"/>
+                    </padding>
+                </TableView>
+            </children>
+        </GridPane>
+        <Label layoutX="263.0" layoutY="20.0" text="Ingredients Log">
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </Label>
+        <Label layoutX="401.0" layoutY="20.0" text="Order Log">
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

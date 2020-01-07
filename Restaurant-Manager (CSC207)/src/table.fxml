@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="702.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="TableController">
+    <children>
+        <SplitPane dividerPositions="0.38868274582560297" focusTraversable="true" prefHeight="700.0" prefWidth="1080.0"
+                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="45.0">
+            <items>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="611.0"
+                            prefWidth="416.0">
+                    <children>
+                        <GridPane prefHeight="611.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0"
+                                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label fx:id="currentTableID" text="Table 1" GridPane.columnIndex="0"
+                                       GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.valignment="TOP">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" fx:id="x1"/>
+                                    </font>
+                                </Label>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bill" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold Italic" size="15.0"/>
+                                    </font>
+                                </Text>
+                                <GridPane GridPane.rowIndex="3">
+                                    <children>
+                                        <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Ordered Items"/>
+                                    </children>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0"
+                                                           prefWidth="173.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0"
+                                                           prefWidth="243.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                </GridPane>
+                                <ScrollPane prefViewportHeight="19.05029296875" GridPane.rowIndex="2">
+                                    <content>
+                                        <Text fx:id="currentBill" strokeType="OUTSIDE" strokeWidth="0.0"
+                                              GridPane.rowIndex="2">
+                                            <font>
+                                                <Font size="15.0" fx:id="x2"/>
+                                            </font>
+                                        </Text>
+                                    </content>
+                                </ScrollPane>
+                                <Label fx:id="peopleNumberLabel" font="$x1" text="People Number: "
+                                       GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0"
+                                       GridPane.valignment="TOP"/>
+                                <ListView fx:id="orderedItems" prefHeight="200.0" prefWidth="200.0"
+                                          GridPane.rowIndex="4"/>
+                            </children>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="413.0" minHeight="0.0" prefHeight="34.0" valignment="TOP"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="485.0" minHeight="0.0" prefHeight="33.0" valignment="TOP"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="485.0" minHeight="10.0" prefHeight="239.0" valignment="TOP"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="381.0" minHeight="10.0" prefHeight="35.0" valignment="TOP"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="381.0" minHeight="10.0" prefHeight="273.0" valignment="TOP"
+                                                vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="611.0" prefWidth="265.0">
+                    <children>
+                        <GridPane alignment="CENTER" hgap="10.0" prefHeight="655.0" prefWidth="656.0" vgap="10.0"
+                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                  AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#handlePayTogether" prefHeight="50.0"
+                                        prefWidth="100.0" text="Pay Together" GridPane.columnIndex="1"
+                                        GridPane.rowIndex="5"/>
+                                <Button mnemonicParsing="false" onAction="#handlePayByDish" prefHeight="50.0"
+                                        prefWidth="100.0" text="Pay by Dishes" GridPane.rowIndex="5"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 1" GridPane.columnIndex="0"
+                                        GridPane.rowIndex="0"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 2" GridPane.columnIndex="1"
+                                        GridPane.rowIndex="0"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 3" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="0"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 5" GridPane.columnIndex="0"
+                                        GridPane.rowIndex="1"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 6" GridPane.columnIndex="1"
+                                        GridPane.rowIndex="1"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 7" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="1"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 4" GridPane.columnIndex="3"/>
+                                <Button mnemonicParsing="false" onAction="#handleTableSelected" prefHeight="100.0"
+                                        prefWidth="150.0" text="Table 8" GridPane.columnIndex="3"
+                                        GridPane.rowIndex="1"/>
+                                <Button mnemonicParsing="false" onAction="#handleViewMenu" prefHeight="50.0"
+                                        prefWidth="100.0" text="View Menu" GridPane.columnIndex="1"
+                                        GridPane.rowIndex="4"/>
+                                <Button mnemonicParsing="false" onAction="#handlePaySeparately" prefHeight="50.0"
+                                        prefWidth="100.0" text="Pay Separately" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="5"/>
+                                <Button mnemonicParsing="false" onAction="#handleSeatedButton" prefHeight="50.0"
+                                        prefWidth="100.0" text="Seated" GridPane.rowIndex="4"/>
+                                <Button fx:id="brokenButton" mnemonicParsing="false" onAction="#handleBroken"
+                                        prefHeight="50.0" prefWidth="100.0" text="Table Broken" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="4"/>
+                                <Button mnemonicParsing="false" onAction="#handleDishCancelled" prefHeight="50.0"
+                                        prefWidth="100.0" text="Cancel Dish" GridPane.columnIndex="2"
+                                        GridPane.rowIndex="3"/>
+                                <Button mnemonicParsing="false" onAction="#handleReheat" prefHeight="49.0"
+                                        prefWidth="97.0" text="Reheat" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Button mnemonicParsing="false" onAction="#handleRemake" prefHeight="55.0"
+                                        prefWidth="97.0" text="Remake" GridPane.rowIndex="3"/>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" GridPane.rowIndex="2"/>
+                                <Text fx:id="status" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1"
+                                      GridPane.rowIndex="2"/>
+                                <Text fx:id="errorInfo" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      wrappingWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2"
+                                      GridPane.valignment="TOP"/>
+                            </children>
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"
+                                                   prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="100.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="100.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="181.0" minHeight="54.0" prefHeight="54.0" valignment="CENTER"
+                                                vgrow="SOMETIMES"/>
+                                <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                                <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                                <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER"
+                                                vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <Button font="$x2" layoutX="15.0" layoutY="5.0" mnemonicParsing="false" onAction="#toMain"
+                text="Back to Welcome"/>
+    </children>
+</AnchorPane>

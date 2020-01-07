@@ -1,0 +1,22 @@
+F1; apple; 2; fruitseller@gamil.com
+F2; banana; 1; fruitseller@gmail.com
+F3; orange; 1.5; fruitseller@gmail.com
+F4; watermelon; 3; fruitseller@gmail.com
+F5; lemon; 2; fruitseller@gmail.com
+F6; kiwi; 2; fruitseller@gmail.com
+F7; strawberry; 0.5; fruitseller@gmail.com
+A1; paper cup (S); 0.2; superstore@gmail.com
+A2; paper cup (M); 0.3; superstore@gmail.com
+A3; paper cup (L); 0.4; superstore@gmail.com
+A4; cup (M); 0.2; superstore@gmail.com
+A5; cup (L); 0.3; superstore@gmail.com
+D1; cream; 0.2; superstore@gmail.com
+D2; sugar; 0.1; superstore@gmail.com
+D3; milk; 4.2; milker@gmail.com
+T1; bubble; 0.1; superstore@gmail.com
+T2; chocolate; 1; superstore@gmail.com
+T3; tea; 5; teaseller@gmail.com
+T4; jelly; 0.5; superstore@gmail.com
+C1; pepper; 2; vegetableseller@gmail.com
+C2; carrot; 1; vegetableseller@gmail.com
+C3; potato; 0.5; vegetableseller@gmail.com
