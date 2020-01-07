@@ -1,3 +1,5 @@
+## Large Scale Landmark Recognition
+Course project for CSC420, by Haoda Li and Ruiqi Wang
 
 #### Initializing the data set index file 
 Download the trainig index file from Google's landmark dataset v2. https://s3.amazonaws.com/google-landmark/metadata/train.csv  
